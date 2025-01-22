@@ -8,7 +8,6 @@ typedef struct USER_INFO {
 	char id[256];
 	int payloadSize;
 	unsigned char payload[4096];
-	int crc;
 } USER_INFO;
 
 bool getGameLog() { return true; }
@@ -30,8 +29,7 @@ public:
 
 int sendUserInfoToServer(USER_INFO &info)
 {
-	//MySocket sock("192.168.10.100");
-	MySocket sock("192.168.10.200");
+	MySocket sock("192.168.10.100");
 	if (sock.connect()) {
 		return sock.send(info);
 	}
@@ -52,7 +50,6 @@ void loadUserInfo(void) {
 
 	//사용자 정보를 기반으로 로그인 payload 데이터 생성
 	USER_INFO userInfo = { 0 };
-	//buildLoginPayload(userInfo);
 	buildLoginPayload(userInfo);
 	if (userInfo.payloadSize > 0) {
 		//사용자 정보를 서버에 전달
