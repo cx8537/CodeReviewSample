@@ -1,23 +1,23 @@
 void anotherFunction(int a, int b) {}
 /**
-* (°³¿ä)
-* ÇÔ¼öÀÇ ±â´É°ú ¿ªÇÒÀ» °£°áÇÏ°Ô ¼³¸í.
-* »ç¿ë ½Ã ÁÖÀÇ»çÇ× µî ÀÛ¼º
+* (ê°œìš”).
+* í•¨ìˆ˜ì˜ ê¸°ëŠ¥ê³¼ ì—­í• ì„ ê°„ê²°í•˜ê²Œ ì„¤ëª….
+* ì‚¬ìš© ì‹œ ì£¼ì˜ì‚¬í•­ ë“± ìž‘ì„±
 * 
 */
 void someFunction(void) {
-	//ºñÇü½Ä ÁÖ¼®
-	//ÇÊ¿ä ½Ã ´Ù¸¥ ÇÔ¼ö¸¦ È£ÃâÇÏ´Â ÀÌÀ¯ ±â¼ú
-	anotherFunction(/*ÇÊ¿ä½Ã ÀÎ¼ö ¼³¸í*/ 1, 2);
+	//ë¹„í˜•ì‹ ì£¼ì„
+	//í•„ìš” ì‹œ ë‹¤ë¥¸ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” ì´ìœ  ê¸°ìˆ 
+	anotherFunction(/*í•„ìš”ì‹œ ì¸ìˆ˜ ì„¤ëª…*/ 1, 2);
 }
 
 /**
-* (°³¿ä)
-* (¿ä¾à)
+* (ê°œìš”)
+* (ìš”ì•½)
 *
-* ±âº» ±â´É¿¡ ´ëÇÑ ¼³¸í(»ó¼¼)
-* play(), seek() È£Ãâ Àü¿¡ ¹Ýµå½Ã prepare() ÇÔ¼ö·Î ¿µ»óÀ» ·ÎµåÇØ¾ß ÇÔ.
-* ±×·¸Áö ¾ÊÀ» °æ¿ì VideoNotReadyException ¹ß»ý 
+* ê¸°ë³¸ ê¸°ëŠ¥ì— ëŒ€í•œ ì„¤ëª…(ìƒì„¸)
+* play(), seek() í˜¸ì¶œ ì „ì— ë°˜ë“œì‹œ prepare() í•¨ìˆ˜ë¡œ ì˜ìƒì„ ë¡œë“œí•´ì•¼ í•¨.
+* ê·¸ë ‡ì§€ ì•Šì„ ê²½ìš° VideoNotReadyException ë°œìƒ 
 */
 class VideoPlayer
 {};
