@@ -1,13 +1,17 @@
 #include <iostream>
+#include <string>
 
 /**
-* ·Î±×¿Â »ç¿ëÀÚ ½Ã½ºÅÛ¿¡¼­ ¼öÁıÇÑ Á¤º¸¸¦ ÀúÀåÇÏ±â À§ÇÑ ±¸Á¶Ã¼
-* payload µ¥ÀÌÅÍ´Â °ÔÀÓ »ç¿ë·®¿¡ µû¶ó ´©ÀûµÇ´Â µ¥ÀÌÅÍ
+* ë¡œê·¸ì˜¨ ì‚¬ìš©ì ì‹œìŠ¤í…œì—ì„œ ìˆ˜ì§‘í•œ ì •ë³´ë¥¼ ì €ì¥í•˜ê¸° ìœ„í•œ êµ¬ì¡°ì²´
+* payload ë°ì´í„°ëŠ” ê²Œì„ ì‚¬ìš©ëŸ‰ì— ë”°ë¼ ëˆ„ì ë˜ëŠ” ë°ì´í„°
 */
+
+using namesapce std;
+
 typedef struct USER_INFO {
 	char id[256];
 	int payloadSize;
-	unsigned char payload[4096];
+	string payload;
 	int crc;
 } USER_INFO;
 
@@ -22,7 +26,7 @@ public:
 	MySocket(const char* param) {}
 	int connect() { return 0; }
 	int send(USER_INFO &info) {
-		//¼ÒÄÏÀ¸·Î info.payload µ¥ÀÌÅÍ Àü¼Û ÈÄ Å©±â ¹İÈ¯
+		//ì†Œì¼“ìœ¼ë¡œ info.payload ë°ì´í„° ì „ì†¡ í›„ í¬ê¸° ë°˜í™˜
 		return info.payloadSize;
 	}
 };
@@ -40,28 +44,27 @@ int sendUserInfoToServer(USER_INFO &info)
 
 
 
-/*ÁÖ¼® »ı·«*/
+/*ì£¼ì„ ìƒëµ*/
 void loadUserInfo(void) {
 	std::string strMessage;
 
-	//°ÔÀÓ »ç¿ë·Î±× ¼öÁı
+	//ê²Œì„ ì‚¬ìš©ë¡œê·¸ ìˆ˜ì§‘
 	if (!getGameLog()) {
 		logForUserLogin("ERROR: Failed to get game log.");
 		return;
 	}
 
-	//»ç¿ëÀÚ Á¤º¸¸¦ ±â¹İÀ¸·Î ·Î±×ÀÎ payload µ¥ÀÌÅÍ »ı¼º
+	//ì‚¬ìš©ì ì •ë³´ë¥¼ ê¸°ë°˜ìœ¼ë¡œ ë¡œê·¸ì¸ payload ë°ì´í„° ìƒì„±
 	USER_INFO userInfo = { 0 };
-	//buildLoginPayload(userInfo);
 	buildLoginPayload(userInfo);
 	if (userInfo.payloadSize > 0) {
-		//»ç¿ëÀÚ Á¤º¸¸¦ ¼­¹ö¿¡ Àü´Ş
+		//ì‚¬ìš©ì ì •ë³´ë¥¼ ì„œë²„ì— ì „ë‹¬
 		sendUserInfoToServer(userInfo);
+		
+		logForUserLogin("Login process complete.");
 	}
 	else {
 		logForUserLogin("ERROR: Failed to build user info");
 	}
-
-	logForUserLogin("Login process complete.");
 }
 
