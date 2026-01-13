@@ -1,7 +1,7 @@
 #include <iostream>
 
 /**
-* ¸Å°³º¯¼ö keyword¿¡ ´ëÇÑ ¼³¸íÀ» ¹®ÀÚ¿­·Î ¹İÈ¯¹ŞÀ½
+* ë§¤ê°œë³€ìˆ˜ keywordì— ëŒ€í•œ ì„¤ëª…ì„ ë¬¸ìì—´ë¡œ ë°˜í™˜ë°›ìŒ
 */
 
 std::string getDescription(std::string& strParam) {
@@ -15,8 +15,8 @@ void doC() {}
 bool checkData() { return true;  }
 
 /**
-* flag°¡ ¼¼Æ®µÇ¸é doA()¸¦ È£ÃâÇÏ°í ±×·¸Áö ¾ÊÀ¸¸é doB()¸¦ È£ÃâÇÑ ÈÄ
-* checkData() ÇÔ¼ö ¹İÈ¯°ªÀÌ true¸é doC()µµ È£ÃâÇÑ´Ù.
+* flagê°€ ì„¸íŠ¸ë˜ë©´ doA()ë¥¼ í˜¸ì¶œí•˜ê³  ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ doB()ë¥¼ í˜¸ì¶œí•œ í›„
+* checkData() í•¨ìˆ˜ ë°˜í™˜ê°’ì´ trueë©´ doC()ë„ í˜¸ì¶œí•œë‹¤.
 */
 
 std::string getDescription(std::string& strParam, bool flag) {
@@ -33,8 +33,8 @@ std::string getDescription(std::string& strParam, bool flag) {
 
 
 /**
-* (°³¿ä)
-* ÀÌ ÇÔ¼ö´Â userProfile() ÇÔ¼ö¿¡¼­ »ç¿ëµÇ°í ÀÖÀ½.
+* (ê°œìš”)
+* ì´ í•¨ìˆ˜ëŠ” userProfile() í•¨ìˆ˜ì—ì„œ ì‚¬ìš©ë˜ê³  ìˆìŒ.
 */
 
 std::string getDescription(std::string strParam) {
